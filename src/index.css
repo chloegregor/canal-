@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+
+:root {
+  --red:rgb(215, 12, 56);
+  --redhover: rgb(250, 58, 99);
+  --grey: rgb(128, 127, 127);
+  --line:rgb(35, 35, 35);
+  --bg: rgb(15, 14, 14);
+}
+
+
+
+body{
+ background-color: var(--bg);
+ color: white;
+ margin: 0;
+
+}
+
+h1{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2em;
+  display: inline-block
+}
+
+h2{
+  font-size: 1.5em;
+}
+
+h3{
+ font-size:1em;
+ color: var(--grey)
+}
