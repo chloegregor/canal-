@@ -20,16 +20,17 @@ interface data {
 interface SwiperProps {
   data: data[],
   orientation:string
+  perview?: number
 }
 
-export default function SwiperComponent({data, orientation}: SwiperProps) {
+export default function SwiperComponent({data, orientation, perview}: SwiperProps) {
   return (
       <div className="mx-[-3rem]">
         <Swiper
           navigation={true}
           slidesOffsetBefore={48}
           slidesOffsetAfter={48}
-          slidesPerView={orientation === 'paysage' ? 6.5 : 8.5}
+          slidesPerView={perview ? perview : orientation === 'paysage' ? 6.5 : 8.5}
           slidesPerGroup={5}
           spaceBetween={5}
           pagination={{
@@ -41,8 +42,8 @@ export default function SwiperComponent({data, orientation}: SwiperProps) {
             {data.map((d) => (
 
               <SwiperSlide>
-                <Link to={`/${d.type}/${d.slug}`}>
-                  <img src={`${d.thumbnail}`} alt="" className={`  w-full h-auto  ${orientation === 'portrait' ? 'aspect-3/4' : 'aspect-16/9'}`} />
+                <Link to={`/${d.type}/${d.slug}`} className="">
+                  <img loading='lazy' src={`${d.thumbnail}`} alt="" className={`  rounded-sm w-full h-auto  ${orientation === 'portrait' ? 'aspect-3/4' : 'aspect-16/9'}`} />
                 </Link>
               </SwiperSlide>
             ))}

@@ -3,7 +3,7 @@
 export default function Dashboard(){
   return (
     <div>
-      <h1>bjr</h1>
+      <h1>hi</h1>
     </div>
   )
 }

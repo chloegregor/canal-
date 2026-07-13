@@ -16,7 +16,7 @@ import { faker } from '@faker-js/faker';
 
 }
 const categories = ['selection', 'incontournable', 'collection', 'nowornever', 'onceinaliftime', 'sagas']
-const genres = ['Action', 'Comédie', 'Drame', 'Science-fiction', 'Horreur', 'Romance', 'Thriller']
+export const genres = ['Action', 'Comédie', 'Drame', 'Science-fiction', 'Horreur', 'Romance', 'Thriller', 'Humour', 'Aventure', 'Animé', 'Animation' ]
 
 function createFilms(): Film {
   const title = faker.book.title()
@@ -29,7 +29,7 @@ function createFilms(): Film {
     duration: faker.number.int({min:60, max:190}),
     genre: faker.helpers.arrayElement(genres),
     categories: faker.helpers.arrayElements(categories, {min:1, max:2}),
-    thumbnail: faker.image.urlPicsumPhotos({width:600, height:600}),
+    thumbnail: faker.image.urlPicsumPhotos({width:800, height:800, blur:0}),
     videoId:'jn2x9CSSvhs?si=C9ersgUZum17XvDH'
   }
 }

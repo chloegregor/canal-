@@ -1,4 +1,4 @@
-import SwiperComponent from "./Swiper";
+import SwiperComponent from "./SwiperComponent";
 import {Link} from 'react-router'
 
 interface data {
@@ -13,10 +13,11 @@ interface SwiperBlockProps {
   title: string,
   subtitle?: string
   seeall?: boolean
+  perview?: number
 }
 
 
-export default function SwiperBlock({data, orientation, title, subtitle}: SwiperBlockProps){
+export default function SwiperBlock({data, orientation, title, subtitle, seeall, perview}: SwiperBlockProps){
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between items-end">
@@ -24,11 +25,13 @@ export default function SwiperBlock({data, orientation, title, subtitle}: Swiper
           <h2>{title}</h2>
           <h3>{subtitle}</h3>
         </div>
-        <div>
-          <Link to={""} className="text-[var(--red)] hover:text-[var(--redhover)]"><p>Tout voir</p></Link>
-        </div>
+        {seeall &&
+          <div>
+            <Link to={""} className="text-[var(--red)] hover:text-[var(--redhover)]"><p>Tout voir</p></Link>
+          </div>
+        }
       </div>
-      <SwiperComponent data={data} orientation={orientation}/>
+      <SwiperComponent data={data} orientation={orientation} perview={perview}/>
     </div>
   )
 }
