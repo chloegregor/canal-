@@ -27,10 +27,15 @@ export default function SwiperComponent({data, orientation, perview}: SwiperProp
   return (
       <div className="mx-[-3rem]">
         <Swiper
+          breakpoints={{
+            0: { slidesPerView: perview ? 1 : orientation === 'paysage' ? 2 : 3 },
+            640: { slidesPerView: perview ? 2 : orientation === 'paysage' ? 2 : 3 },
+            1024: { slidesPerView: perview ? perview : orientation === 'paysage' ? 6.5 : 8.5 },
+            1440: { slidesPerView:perview ? perview : orientation === 'paysage' ? 6.5 : 8.5 },
+            }}
           navigation={true}
           slidesOffsetBefore={48}
           slidesOffsetAfter={48}
-          slidesPerView={perview ? perview : orientation === 'paysage' ? 6.5 : 8.5}
           slidesPerGroup={5}
           spaceBetween={5}
           pagination={{
@@ -43,7 +48,7 @@ export default function SwiperComponent({data, orientation, perview}: SwiperProp
 
               <SwiperSlide>
                 <Link to={`/${d.type}/${d.slug}`} className="">
-                  <img loading='lazy' src={`${d.thumbnail}`} alt="" className={`  rounded-sm w-full h-auto  ${orientation === 'portrait' ? 'aspect-3/4' : 'aspect-16/9'}`} />
+                  <img loading='lazy' src={`${d.thumbnail}`} alt="" className={`  object-cover rounded-sm w-full h-auto  ${orientation === 'portrait' ? 'aspect-3/4' : 'aspect-16/9'}`} />
                 </Link>
               </SwiperSlide>
             ))}

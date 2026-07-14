@@ -21,10 +21,15 @@ export default function SwiperGenre({data, type}: SwiperProps) {
   return (
       <div className="mx-[-3rem]">
         <Swiper
+        breakpoints={{
+            0: { slidesPerView: 3},
+            640: { slidesPerView: 4},
+            1024: { slidesPerView: 6},
+            1440: { slidesPerView:9 },
+            }}
           navigation={true}
           slidesOffsetBefore={48}
           slidesOffsetAfter={48}
-          slidesPerView={9}
           slidesPerGroup={5}
           spaceBetween={5}
           pagination={{
@@ -37,8 +42,8 @@ export default function SwiperGenre({data, type}: SwiperProps) {
 
               <SwiperSlide>
                 <Link to={`/${type}/genre/${d.toLowerCase()}`}>
-                <div className=" flex items-center justify-center p-3  border border-[var(--red)] hover:text-[var(--redhover)] rounded-full">
-                  <p className="text-[1.2em]  text-center">{d}</p>
+                <div className=" flex items-center justify-center lg:p-3 p-1  border border-[var(--red)] hover:text-[var(--redhover)] rounded-full">
+                  <p className="lg:text-[1em] text-[0.8em] text-center">{d}</p>
                 </div>
                 </Link>
               </SwiperSlide>

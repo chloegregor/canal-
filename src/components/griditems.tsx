@@ -1,10 +1,13 @@
 import {Link} from 'react-router'
+import { categoriesLabel } from '../data/dictionnaire'
+
 interface data{
   thumbnail: string,
   slug: string,
   type: string,
   title: string,
   genre: string
+  categories: string[]
 }
 
 interface gridProps{
@@ -13,7 +16,7 @@ interface gridProps{
 
 export default function GridItem({data}:gridProps){
   return(
-    <div className=" grid lg:grid-cols-6 lg:gap-5 grid-cols-3">
+    <div className=" grid lg:grid-cols-6 lg:gap-5 grid-cols-2 gap-3">
       {data.map((d) => (
         <Link to={`/${d.type}/${d.slug}`}>
           <div className="flex flex-col gap-2">
@@ -22,9 +25,14 @@ export default function GridItem({data}:gridProps){
             </div>
             <div>
               <p>{d.title}</p>
-              <div className="flex gap-2 text-[var(--grey)]">
+              <div className="flex gap-2 text-[var(--grey)] text-[0.8em]">
                 <p>{d.type}</p>
                 <p>{d.genre}</p>
+              </div>
+              <div className='flex gap-1 flex-wrap'>
+                {d.categories.map((cat) => (
+                  <p className="rounded-full border px-2 border-[var(--grey)] text-[var(--grey)] text-[0.8em]">{categoriesLabel[cat]}</p>
+                ))}
               </div>
             </div>
           </div>

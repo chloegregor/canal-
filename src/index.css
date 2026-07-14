@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+html {
+  font-size: 100%; /* généralement 16px */
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 80%; /* ~14px, réduit tout le site proportionnellement */
+  }
+}
 
 :root {
   --red:rgb(215, 12, 56);
