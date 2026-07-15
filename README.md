@@ -6,11 +6,17 @@ README
 Stack Technique 
 
   React 19 & TypeScript
+  
   Vite.js
+  
   Tailwind CSS (v4)
+  
   React Router Dom (v7) : Gestion d'un routage dynamique
+  
   Swiper.js : Intégration de carrousels
+  
   Recharts : Utilisé pour modéliser visuellement les indicateurs sur la partie Administration.
+  
   Faker.js : Pour générer un jeu de données de 60 films réalistes et dynamiques afin de tester l'application en conditions quasi-réelles.
 
 
