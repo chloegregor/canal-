@@ -10,12 +10,12 @@ export default function Nav(){
         <div>
           <NavLink to={'/'}
             end
-            className={({isActive}) => (isActive ? 'text-[var(--red)]' : '')}>
+            className={({isActive}) => (isActive ? 'text-[var(--red)]' : ' hover:text-[var(--redhover)] hover-transition')}>
               <p>Explorer</p>
           </NavLink>
         </div>
         <div>
-          <NavLink to={'/film'} className={({isActive}) => (isActive ? 'text-[var(--red)]' : '')}>
+          <NavLink to={'/cinema'} className={({isActive}) => (isActive ? 'text-[var(--red)]' : ' hover:text-[var(--redhover)] hover-transition')}>
             <p>Cinéma</p>
           </NavLink>
         </div>
@@ -24,7 +24,7 @@ export default function Nav(){
         </div>
       </div>
       <div className="">
-        <NavLink to={'/admin/dashboard'} className={({isActive}) => (isActive ? 'text-[var(--red)]' : '')}>
+        <NavLink to={'/admin/dashboard'} className={({isActive}) => (isActive ? 'text-[var(--red)]' : 'hover:text-[var(--redhover)] hover-transition')}>
           Admin
         </NavLink>
       </div>

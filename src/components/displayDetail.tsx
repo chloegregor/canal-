@@ -32,8 +32,8 @@ export default function DisplayDetail({content, type}:displayProps){
               <p>Catégories :</p>
               <div className="flex gap-2 flex-wrap">
                 {
-                  content.categories.map((cat) => (
-                    <p className="rounded-full border px-2 border-[var(--grey)] text-[var(--grey)]">{categoriesLabel[cat]}</p>
+                  content.categories.map((cat, index) => (
+                    <p key={index} className="rounded-full border px-2 border-[var(--grey)] text-[var(--grey)]">{categoriesLabel[cat]}</p>
                   ))
                 }
               </div>

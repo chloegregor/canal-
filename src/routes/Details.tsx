@@ -1,4 +1,4 @@
-import {useParams} from 'react-router'
+import {useParams, useLocation} from 'react-router'
 import {useState} from 'react'
 import { FindFilmBySlug, filterCategory, filterGenre } from '../utils/filterFilms'
 import DisplayDetail from '../components/displayDetail'
@@ -35,7 +35,6 @@ export default function Details(){
   const categories = content?.categories
   const same_categories_content = categories.map((cat) => ([...filterCategory(cat)])).flat().filter((item) => item.slug != content.slug)
   const same_genre_content = filterGenre(content.genre.toLowerCase()).filter((i) => i.slug != content.slug)
-  console.log(same_genre_content)
 
 
 

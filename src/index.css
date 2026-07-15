@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 html {
-  font-size: 100%; /* généralement 16px */
+  font-size: 100%;
+  /* généralement 16px */
 }
 
 @media (max-width: 768px) {
@@ -11,7 +12,7 @@ html {
 }
 
 :root {
-  --red:rgb(215, 12, 56);
+  --red:#d70c38;
   --redhover: rgb(250, 58, 99);
   --grey: rgb(128, 127, 127);
   --line:rgb(35, 35, 35);
@@ -24,6 +25,7 @@ body{
  background-color: var(--bg);
  color: white;
  margin: 0;
+ 
 
 }
 
@@ -41,4 +43,31 @@ h2{
 h3{
  font-size:1em;
  color: var(--grey)
+}
+
+
+.hover-transition{
+  transition: background-color 0.2s ease;
+    transition: color 0.2s ease;
+
+
+}
+
+
+.swiper-button-next svg ,
+.swiper-button-prev svg  {
+  pointer-events: none;
+  fill: none !important;
+  opacity: 30%;
+  transition: opacity 0.2s ease;
+}
+
+.swiper-button-next:hover svg ,
+.swiper-button-prev:hover svg  {
+  opacity:100%
+
+}
+
+.swiper-button-disabled{
+  visibility: hidden
 }

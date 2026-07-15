@@ -22,7 +22,6 @@ export const genres = ['Action', 'Comédie', 'Drame', 'Science-fiction', 'Horreu
 
 function createFilms(): Content {
   const title = faker.book.title()
-
   return {
     type: "film",
     slug: faker.helpers.slugify(title).toLowerCase(),
@@ -42,3 +41,5 @@ function createFilms(): Content {
 
 
 export const films: Content[] =  Array.from({length:60}, createFilms)
+
+

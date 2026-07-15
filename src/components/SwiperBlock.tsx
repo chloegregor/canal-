@@ -8,7 +8,11 @@ interface data {
 }
 
 interface SwiperBlockProps {
+
   data: data[],
+  type: string
+  category?:string
+  genre?:string
   orientation:string
   title: string,
   subtitle?: string
@@ -17,7 +21,7 @@ interface SwiperBlockProps {
 }
 
 
-export default function SwiperBlock({data, orientation, title, subtitle, seeall, perview}: SwiperBlockProps){
+export default function SwiperBlock({data, type, category, genre, orientation, title, subtitle, seeall, perview}: SwiperBlockProps){
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between items-end">
@@ -27,7 +31,7 @@ export default function SwiperBlock({data, orientation, title, subtitle, seeall,
         </div>
         {seeall &&
           <div>
-            <Link to={""} className="text-[var(--red)] hover:text-[var(--redhover)]"><p>Tout voir</p></Link>
+            <Link to={`/${type}/${type === 'category' ? category : genre}`} className="text-[var(--red)] hover:text-[var(--redhover)] hover-transition"><p>Tout voir</p></Link>
           </div>
         }
       </div>

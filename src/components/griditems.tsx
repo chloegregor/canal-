@@ -17,8 +17,8 @@ interface gridProps{
 export default function GridItem({data}:gridProps){
   return(
     <div className=" grid lg:grid-cols-6 lg:gap-5 grid-cols-2 gap-3">
-      {data.map((d) => (
-        <Link to={`/${d.type}/${d.slug}`}>
+      {data.map((d, index) => (
+        <Link key={index} to={`/details/${d.type}/${d.slug}`}>
           <div className="flex flex-col gap-2">
             <div className="aspect-3/2">
               <img src={d.thumbnail} alt={d.slug} className="w-full h-full object-cover" />
@@ -29,9 +29,9 @@ export default function GridItem({data}:gridProps){
                 <p>{d.type}</p>
                 <p>{d.genre}</p>
               </div>
-              <div className='flex gap-1 flex-wrap'>
-                {d.categories.map((cat) => (
-                  <p className="rounded-full border px-2 border-[var(--grey)] text-[var(--grey)] text-[0.8em]">{categoriesLabel[cat]}</p>
+              <div className='flex gap-1'>
+                {d.categories.map((cat, index) => (
+                  <p key={index+cat} className="rounded-full border px-2 border-[var(--grey)] text-[var(--grey)] text-[0.8em] truncate">{categoriesLabel[cat]}</p>
                 ))}
               </div>
             </div>
