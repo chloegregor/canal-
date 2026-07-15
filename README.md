@@ -3,7 +3,7 @@
 
 README
 
-Stack Technique : Stack Technique
+Stack Technique 
 
   React 19 & TypeScript
   Vite.js
