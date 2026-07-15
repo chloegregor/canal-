@@ -6,7 +6,6 @@ export default function Footer(){
       <p>Réalisation dans le cadre du processus de recrutement chez Mirabell Studios.</p>
       <p>Développement: Chloé Grégoire.</p>
       <p>Légère inspiration: Canal+</p>
-
     </div>
   )
 }
