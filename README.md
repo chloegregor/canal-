@@ -42,6 +42,16 @@ Point à développer:
 5. Mettre en place un  bouton hamburger pour anticiper l'augmentation de la taille des catégories dnas la partie admin sur mobile.
 
 
+
+installation :
+
+git clone https://github.com/chloegregor/canal-
+cd canal-
+
+npm install
+
+npm run dev
+
 Merci de m'avoir lue !
 
 
