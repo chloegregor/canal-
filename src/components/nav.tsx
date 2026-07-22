@@ -15,7 +15,7 @@ export default function Nav(){
           </NavLink>
         </div>
         <div>
-          <NavLink to={'/cinema'} className={({isActive}) => (isActive ? 'text-[var(--red)]' : ' hover:text-[var(--redhover)] hover-transition')}>
+          <NavLink to={'/film'} className={({isActive}) => (isActive ? 'text-[var(--red)]' : ' hover:text-[var(--redhover)] hover-transition')}>
             <p>Cinéma</p>
           </NavLink>
         </div>

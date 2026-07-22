@@ -18,7 +18,7 @@ export default function GridItem({data}:gridProps){
   return(
     <div className=" grid lg:grid-cols-6 lg:gap-5 grid-cols-2 gap-3">
       {data.map((d, index) => (
-        <Link key={d.slug + index} to={`/details/${d.type}/${d.slug}`}>
+        <Link key={d.slug + index} to={`/${d.type}/details/${d.slug}`}>
           <div className="flex flex-col gap-2">
             <div className="aspect-3/2">
               <img src={d.thumbnail} alt={d.slug} className="w-full h-full object-cover" />

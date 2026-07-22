@@ -41,5 +41,3 @@ function createFilms(): Content {
 
 
 export const films: Content[] =  Array.from({length:60}, createFilms)
-
-

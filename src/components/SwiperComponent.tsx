@@ -47,7 +47,7 @@ export default function SwiperComponent({data, orientation, perview}: SwiperProp
             {data.map((d) => (
 
               <SwiperSlide>
-                <Link to={`/details/${d.type}/${d.slug}`} className="w-full">
+                <Link to={`/${d.type}/details/${d.slug}`} className="w-full">
                   <img loading='lazy' src={`${d.thumbnail}`} alt="" className={`  object-cover rounded-sm max-w-full h-auto  ${orientation === 'portrait' ? 'aspect-3/4' : 'aspect-16/9'}`} />
                 </Link>
               </SwiperSlide>

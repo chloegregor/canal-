@@ -21,8 +21,8 @@ export default function App(){
         <Route element={<Layout/>}>
           <Route path='/' element={<Home/>}/>
           <Route path='/admin/dashboard' element={<Dashboard/>}/>
-          <Route path='/details/:type/:slug' element={<Details/>}/>
-          <Route path='/cinema' element={<Films/>}/>
+          <Route path='/:type/details/:slug' element={<Details/>}/>
+          <Route path='/film' element={<Films/>}/>
           <Route path='/:type/:filter/:slug' element={<ContentFilter/>}/>
           <Route path='/:filter/:slug' element={<Filter/>}/>
         </Route>
