@@ -22,7 +22,7 @@ export default function Details(){
       </div>
     )
   }
-  const content = type === 'film' ? FindFilmBySlug(slug) : type ===' serie' ? null : null
+  const content = type === 'film' ? FindFilmBySlug(slug) : type ==='serie' ? null : null
 
 
   if (!content){
@@ -36,6 +36,7 @@ export default function Details(){
   const same_categories_content = categories.map((cat) => ([...filterCategory(cat)])).flat().filter((item) => item.slug != content.slug)
   const same_genre_content = filterGenre(content.genre.toLowerCase()).filter((i) => i.slug != content.slug)
 
+  console.log(same_categories_content.length, same_categories_content.map(f => f.slug))
 
 
 
